@@ -3,12 +3,18 @@ package org.example.controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.example.service.EventService;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(value ="")
+@WebServlet(value ="", loadOnStartup = 1)
 public class HelloServlet extends HttpServlet {
+
+    public void init() {
+        EventService eventService = new EventService();
+
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {

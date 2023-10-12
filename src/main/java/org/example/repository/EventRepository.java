@@ -8,7 +8,7 @@ import jakarta.persistence.Persistence;
 public class EventRepository {
     private final EntityManagerFactory entityManagerFactory;
     public EventRepository(){
-        entityManagerFactory= Persistence.createEntityManagerFactory("my-persistence-unit");
+        entityManagerFactory= Persistence.createEntityManagerFactory("default");
     }
 
     public void save(Event event){
